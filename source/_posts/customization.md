@@ -58,16 +58,18 @@ info:
 在 `_config.linen.yml` 中加入如下格式的内容：
 
 ```yaml _config.linen.yml
-lazyload: 
-  enable: true,
-  loadingImage: "/linen-theme/img/lazyload/loading.svg", // 自定义的 loading 图片
-  errorTipImage: "/linen-theme/img/lazyload/error-tip.svg", // 自定义的 Error 图片
-  intersectionRatio: 0.25, // 触发加载的图片比例
-  placeholderRatio: 3 / 2, // 默认的占位图比例
-  showTransition: true, // 是否需要过度动画
-  showAltText: true, // 是否展示 Alt 文字到图片下方
-  preloadCount: 5 // 预加载的图片数量
+lazyload:
+  enable: true
+  loadingImage: ""
+  errorTipImage: /linen-theme/img/lazyload/error-tip.svg
+  intersectionRatio: 0.25
+  placeholderRatio: 1.5
+  showTransition: true
+  showAltText: true
+  preloadCount: 5
 ```
+
+`loadingImage` 是全局转圈图。要模糊底色，用 [Image-Blurer](https://lynanbreeze.github.io/image-blurrer/) 生成 blurhash / `linear-gradient(...)` / base64，跟图片写在同一行：`![$placeholder=值=placeholder](/img/foo.jpg)`。多篇文章复用同一张图时写到 `assets-db/imgs/*.json`。写法见 [图片排版](/image-grid/)。改完执行 `hexo clean`。
 
 以上参数为默认值，可根据实际需要进行修改。
 

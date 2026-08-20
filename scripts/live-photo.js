@@ -8,7 +8,6 @@ const KEYS = [
   "loop",
   "muted",
   "volume",
-  "useApple",
 ];
 
 function parseArgs(args) {
@@ -30,7 +29,6 @@ function parseArgs(args) {
     loop: named.loop === "1" || named.loop === "true",
     muted: named.muted === "1" || named.muted === "true",
     volume: named.volume || "",
-    useApple: named.useApple === "1" || named.useApple === "true",
   };
 }
 
@@ -46,13 +44,12 @@ hexo.extend.tag.register("live_photo", function (args) {
   if (!opts.photoSrc || !opts.videoSrc) return "";
 
   const params = new URLSearchParams({
-    photoSrc: withRoot(opts.photoSrc),
-    videoSrc: withRoot(opts.videoSrc),
+    picUrl: withRoot(opts.photoSrc),
+    videoUrl: withRoot(opts.videoSrc),
   });
   if (opts.loop) params.set("loop", "1");
   if (opts.muted) params.set("muted", "1");
   if (opts.volume) params.set("volume", String(opts.volume));
-  if (opts.useApple) params.set("useApple", "1");
 
   const src = `${withRoot("/static/live-photo/")}?${params.toString()}`;
   return `<iframe src="${src}" scrolling="no" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true" style="width: 100%; aspect-ratio: 16/9;"></iframe>`;
