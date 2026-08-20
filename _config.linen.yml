@@ -1,0 +1,18 @@
+version: 1.0.0
+siteOriginLocaleMap:
+  zh-CN: https://lynanbreeze.github.io/hexo-theme-linen-doc-zh-CN/
+  en: https://lynanbreeze.github.io/hexo-theme-linen-doc/
+info:
+  logo: /img/logo_black.svg
+  site_desc: 一个简约的 Hexo 主题.
+  github: https://github.com/LynanBreeze/hexo-theme-linen-doc-zh-CN
+  siteCardBg: /img/og-img.jpg
+  registration: 火星ICP备222222号
+navItems:
+  - name: 归档
+    path: /archives/
+topArticles:
+  - _posts/quick-start.md
+  - _posts/customization.md
+  - _posts/write-with-markdown.md
+  - _posts/image-grid.md

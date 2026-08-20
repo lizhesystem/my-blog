@@ -3,18 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: LZ's blog
+title: Lz's blog
 subtitle: ""
 description: ""
 keywords:
-author: lz
-language: en
+author: Lzhe
+language: zh-CN
 timezone: ""
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://my-blog-lake-pi.vercel.app
-permalink: :year/:month/:day/:title/
+root: /
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -97,6 +98,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: linen
+# theme: hexo-theme-linen
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
