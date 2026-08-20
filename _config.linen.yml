@@ -16,3 +16,8 @@ topArticles:
   - _posts/customization.md
   - _posts/write-with-markdown.md
   - _posts/image-grid.md
+photoswipe: true
+lazyload:
+  enable: true
+heads:
+  - <style>.pswp-live-photo-trigger{min-width:108px;width:auto;padding:0 14px;box-sizing:border-box}.pswp-live-photo-trigger .icon-wrap{flex:0 0 30px}</style>

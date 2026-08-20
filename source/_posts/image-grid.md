@@ -45,11 +45,9 @@ Linen 主题新增了图片容器，支持以下几种布局的图片排版。�
 
 ## Live Photo
 
-[live-photo](https://github.com/LynanBreeze/live-photo) 用静帧图 + 短视频实现 Live 效果。文章里用标签插入：
+左上角 **LIVE** 播放短视频；点击画面用主题自带的 [PhotoSwipe](https://photoswipe.com/) 大图预览，同一篇文章里的图片可左右滑动。
 
-{% live_photo photoSrc:https://lynanbreeze.github.io/live-photo/test/live.jpg videoSrc:https://lynanbreeze.github.io/live-photo/test/live.mp4 %}
-
-自己的素材放到 `source/img/` 后写成：
+{% live_photo photoSrc:/img/live.jpg videoSrc:/img/live.mp4 %}
 
 ```
 {% live_photo photoSrc:/img/live.jpg videoSrc:/img/live.mp4 %}
@@ -62,11 +60,3 @@ Linen 主题新增了图片容器，支持以下几种布局的图片排版。�
 | loop | 循环播放，传 `1` |
 | muted | 静音，传 `1` |
 | volume | 音量 `0-100`，默认 `100` |
-| useApple | 使用 Apple LivePhotosKit，传 `1` |
-
-和图片排版混用时写 iframe（`:::image-grid` 只识别 `img` / `iframe`）：
-
-:::image-grid landscape
-<iframe src="https://lynanbreeze.github.io/live-photo/?photoSrc=/live-photo/test/live.jpg&videoSrc=/live-photo/test/live.mp4" scrolling="no" frameborder="0" allowfullscreen="true" style="width: 100%; aspect-ratio: 16/9;"></iframe>
-<iframe src="https://lynanbreeze.github.io/live-photo/?photoSrc=/live-photo/test/live.jpg&videoSrc=/live-photo/test/live.mp4&useApple=1" scrolling="no" frameborder="0" allowfullscreen="true" style="width: 100%; aspect-ratio: 16/9;"></iframe>
-:::
