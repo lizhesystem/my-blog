@@ -52,5 +52,5 @@ hexo.extend.tag.register("live_photo", function (args) {
   if (opts.volume) params.set("volume", String(opts.volume));
 
   const src = `${withRoot("/static/live-photo/")}?${params.toString()}`;
-  return `<iframe src="${src}" scrolling="no" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true" style="width: 100%; aspect-ratio: 16/9;"></iframe>`;
+  return `<iframe src="${src}" scrolling="no" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true" style="width: 100%; aspect-ratio: 1920/1080;"></iframe>`;
 });

@@ -52,7 +52,7 @@ Linen 主题新增了图片容器，支持以下几种布局的图片排版。�
 官方写法：
 
 ```html
-<iframe src="/static/live-photo/?picUrl=/img/live.jpg&videoUrl=/img/live.mp4" scrolling="no" frameborder="0" allowfullscreen="true" style="width: 100%; aspect-ratio: 16/9;"></iframe>
+<iframe src="/static/live-photo/?picUrl=/img/live.jpg&videoUrl=/img/live.mp4" scrolling="no" frameborder="0" allowfullscreen="true" style="width: 100%; aspect-ratio: 1920/1080;"></iframe>
 ```
 
 `{% live_photo %}` 只是把上面这段 iframe 写短一点。播放器文件在 `source/static/live-photo/index.html`，主题本身不带这个页面。
