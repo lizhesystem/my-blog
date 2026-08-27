@@ -5,7 +5,7 @@ excerpt: 欢迎使用 Linen —— 一个简约、优雅的 Hexo 主题。请跟
 categories: 快速开始
 tags: [快速开始, 配置]
 cover: /img/markus-winkler-newg0EE_rxw-unsplash.jpg
-coverPlaceholder:'linear-gradient(rgba(99,106,106,1.0),rgba(151,124,105,1.0),rgba(185,154,129,1.0),rgba(173,156,140,1.0),rgba(160,136,117,1.0),rgba(102,110,112,1.0))'
+coverPlaceholder: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABQODxIPDRQSERIXFhQYHzMhHxwcHz8tLyUzSkFOTUlBSEZSXHZkUldvWEZIZoxob3p9hIWET2ORm4+AmnaBhH//2wBDARYXFx8bHzwhITx/VEhUf39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f3//wAARCAAVACADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCtaW7GL92uQPWpvs05/g/lU+mHNuCQRu5+lWNyyAoM4z94DtUNu5airFFbac/wj8xT1s5WfBC56gZq+NokOTwcYAHTrmnLvyu0A88g/Spc33KUF2ZkxO3lgKxUY7GkLPn77fnRRWtjG7G7nA++3Hualy399vzoop9Avqf/2Q=="
 coverInfo: 
   author: Markus Winkler
   url: https://unsplash.com/photos/a-close-up-of-a-street-sign-on-the-ground-newg0EE_rxw
@@ -16,6 +16,8 @@ translations: ['en']
 ---
 
 ## 简介
+
+![](/img/markus-winkler-newg0EE_rxw-unsplash.jpg)
 
 欢迎使用 Linen —— 一个简约、优雅的 Hexo 主题。这个主题大部分灵感来自于 [https://medium.com/blog](https://medium.com/blog)。
 
