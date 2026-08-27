@@ -11,9 +11,13 @@ function pathnameOf(src) {
 
 function placeholderStyle(placeholder) {
   if (!placeholder || String(placeholder).startsWith("blurhash:")) return "";
-  return /http|data:image/.test(placeholder)
-    ? `background-image: url(${placeholder})`
-    : placeholder;
+  if (/^(https?:|data:image)/i.test(placeholder)) {
+    return `background-image: url(${placeholder})`;
+  }
+  if (/^(linear|radial|conic)-gradient\(/i.test(placeholder) || /^url\(/i.test(placeholder)) {
+    return `background-image: ${placeholder}`;
+  }
+  return placeholder;
 }
 
 function escapeAttr(value) {
@@ -41,14 +45,11 @@ hexo.extend.filter.register(
     const coverPhByPath = coverPlaceholdersFromPosts(this);
     const pageCoverPh = data?.page?.coverPlaceholder || "";
 
-    if (
-      pageCoverPh &&
-      str.includes('<div class="post-cover-img-wrap">') &&
-      !str.includes('<div class="post-cover-img-wrap" style=')
-    ) {
+    if (pageCoverPh && /class="post-cover-img-wrap"/.test(str)) {
+      const style = placeholderStyle(pageCoverPh);
       str = str.replace(
-        '<div class="post-cover-img-wrap">',
-        `<div class="post-cover-img-wrap" style="${placeholderStyle(pageCoverPh)}">`,
+        /<div class="post-cover-img-wrap"(?: style="[^"]*")?>/,
+        `<div class="post-cover-img-wrap"${style ? ` style="${style}"` : ""}>`,
       );
     }
 
