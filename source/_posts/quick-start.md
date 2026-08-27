@@ -17,8 +17,6 @@ translations: ['en']
 
 ## 简介
 
-![](/img/markus-winkler-newg0EE_rxw-unsplash.jpg)
-
 欢迎使用 Linen —— 一个简约、优雅的 Hexo 主题。这个主题大部分灵感来自于 [https://medium.com/blog](https://medium.com/blog)。
 
 ## 安装
