@@ -4,6 +4,7 @@ date: 2026-03-28 23:58
 excerpt: 配置您站点的个性化设置。
 categories: 快速开始
 cover: /img/vinicius-amnx-amano-17NCG_wOkMY-unsplash.jpg
+coverPlaceholder:'linear-gradient(rgba(99,106,106,1.0),rgba(151,124,105,1.0),rgba(185,154,129,1.0),rgba(173,156,140,1.0),rgba(160,136,117,1.0),rgba(102,110,112,1.0))'
 coverInfo: 
   author: Markus Winkler
   url: https://unsplash.com/photos/a-close-up-of-a-street-sign-on-the-ground-newg0EE_rxw
