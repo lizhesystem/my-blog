@@ -20,4 +20,4 @@ photoswipe: true
 lazyload:
   enable: true
 heads:
-  - <style>.pswp-live-photo-trigger{min-width:108px;width:auto;padding:0 14px;box-sizing:border-box}.pswp-live-photo-trigger .icon-wrap{flex:0 0 30px}</style>
+  - <style>.pswp-live-photo-trigger{min-width:108px;width:auto;padding:0 14px;box-sizing:border-box}.pswp-live-photo-trigger .icon-wrap{flex:0 0 30px}.lazyload-wrap .placeholder{background-color:#f4f1ea;background-position:center;background-repeat:no-repeat;background-size:cover}.lazyload-wrap .placeholder:not([style*="background-image"]){background-image:url(/img/lazyload/loading.svg);background-size:36px 36px}.lazyload-wrap .placeholder.loaded{background-image:none!important;background-color:unset!important}.lazyload-wrap img{object-fit:cover}</style>

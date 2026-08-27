@@ -39,8 +39,8 @@ Linen 主题新增了图片容器，支持以下几种布局的图片排版。�
 支持 r73、r37、r64、r46 共 4 种混排比例布局。
 
 :::image-grid r73
-![](/img/jasper-gribble-EOMFC1NyHgM-unsplash.jpg)
-![](/img/squids-z-ShAHqWGOrRU-unsplash.jpg)
+![$placeholder=linear-gradient(135deg,rgba(196,168,130,1),rgba(120,140,150,1),rgba(70,90,100,1))=placeholder](/img/jasper-gribble-EOMFC1NyHgM-unsplash.jpg)
+![$placeholder=linear-gradient(160deg,rgba(90,110,80,1),rgba(150,160,120,1),rgba(210,200,170,1))=placeholder](/img/squids-z-ShAHqWGOrRU-unsplash.jpg)
 :::
 
 ## Live Photo
@@ -52,7 +52,7 @@ Linen 主题新增了图片容器，支持以下几种布局的图片排版。�
 官方写法：
 
 ```html
-<iframe src="/static/live-photo/?picUrl=/img/live.jpg&videoUrl=/img/live.mp4" scrolling="no" frameborder="0" allowfullscreen="true" style="width: 100%; aspect-ratio: 16/9;"></iframe>
+<iframe src="/static/live-photo/?picUrl=/img/live.jpg&videoUrl=/img/live.mp4" scrolling="no" frameborder="0" allowfullscreen="true" style="width: 100%; aspect-ratio: 1920/1080;"></iframe>
 ```
 
 `{% live_photo %}` 只是把上面这段 iframe 写短一点。播放器文件在 `source/static/live-photo/index.html`，主题本身不带这个页面。
