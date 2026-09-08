@@ -4,8 +4,8 @@ excerpt: 一些自定义的 Front Matter 配置。
 date: 2026-03-28 23:53
 cover: /img/freestocks-VFs2fZEVkXo-unsplash.jpg
 coverInfo: 
-  author: freestocks
-  url: https://unsplash.com/photos/top-view-of-opened-magazine-near-up-of-coffee-VFs2fZEVkXo
+    location: 澳门·市政署大楼
+    url: https://maps.apple.com/place?address=Avenida%20de%20Almeida%20Ribeiro%20No.%20163,%20Macao%20SAR,%20China&coordinate=22.193346,113.539592&name=%E5%B8%82%E6%94%BF%E7%BD%B2&place-id=IC211FBD448B1E6C&map=explore
 series: 用户指南
 tags: [快速开始, 配置]
 appendRawMarkdown: true
