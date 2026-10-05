@@ -13,20 +13,51 @@ tocType: flat
 translations: ['en']
 ---
 
+图片上传：
+python r2_upload.py              # 正常上传（自动跳过已传过的）
+python r2_upload.py --force      # 忽略记录，全部重传
+python r2_upload.py --dry-run    # 只压缩不上传，测试用
+python r2_upload.py --dir 其他目录
+
 Markdown 默认的图片是一行一张。
 
 ![](/img/duy-le-duc-GUY2f9csQbc-unsplash.jpg)
 
-Linen 主题新增了图片容器，支持以下几种布局的图片排版。请点击页面上的 **切换到原始 Markdown 内容** 按钮参考页面源码来使用图片排版。
+Linen 主题用 `:::image-grid` 把多张图排进一行。容器里每个非空行都会被处理；只有渲染出 `<img>` 或 `<iframe>` 的行才会包成格子。请点击页面上的 **切换到原始 Markdown 内容** 按钮对照源码。
+
+## 写法
+
+类名只能有一个，匹配 `[\w-]+`，中间不能有空格。容器前后各空一行。
+
+```
+:::image-grid landscape
+![说明](/img/a.jpg)
+![说明](/img/b.jpg)
+:::
+```
+
+模糊占位、禁止预览可以写在同一行，规则见文末：
+
+```
+![$placeholder=linear-gradient(...)=placeholder](/img/a.jpg)
+![no-link](/img/a.jpg)
+```
 
 ## 横排
 
+`landscape`：2、3、4 张等分一行，占位比例统一 4:3。示例是 2 张。2~3张最好
+
 :::image-grid landscape
-![](/img/klara-kulikova-PgrSvkU1_4Y-unsplash.jpg)
-![](/img/mariola-grobelska-rxFb6meV3ck-unsplash.jpg)
+![](https://img.jiaozhe.me/2026/09/DSC03925-20260917215203-uzn3jmf.webp)
+:::
+
+:::image-grid landscape
+![](https://img.jiaozhe.me/2026/09/1790519160584.webp)
 :::
 
 ## 竖排
+
+`portrait`：2、3、4 张等分一行，占位比例统一 3:4。示例是 3 张。
 
 :::image-grid portrait
 ![](/img/kamran-norollahi-KwP58z9zJeE-unsplash.jpg)
@@ -34,14 +65,60 @@ Linen 主题新增了图片容器，支持以下几种布局的图片排版。�
 ![](/img/david-boca-Xqmj-oQ_Nek-unsplash.jpg)
 :::
 
+不写类名时同样按张数等分，高度跟原图走，不强制 4:3 或 3:4。
+
+| 张数 | 每张宽度 |
+| --- | --- |
+| 2 | 约 1/2 |
+| 3 | 约 1/3 |
+| 4 | 约 1/4 |
+
+`landscape` / `portrait` 只改占位盒比例。图片是 `height: auto`，不是裁切填满格子。第 5 张及以后没有宽度规则，等分布局不要超过 4 张。
+
 ## 横竖混排
 
-支持 r73、r37、r64、r46 共 4 种混排比例布局。
+只认前两张。名称是左:右的大致份额，不是精确百分比。第三张及以后不参与这两种宽度。
+
+| 类名 | 第 1 张 | 第 2 张 | 画面 |
+| --- | --- | --- | --- |
+| `r73` | 宽 3:2（约 67%） | 竖 2:3（约 150%） | 左横右竖 |
+| `r37` | 竖 2:3 | 宽 3:2 | 左竖右横 |
+| `r64` | 宽 4:3 | 竖 4:3 | 左横右竖，横图更大 |
+| `r46` | 竖 4:3 | 宽 4:3 | 左竖右横 |
+| `rLeftWide` | 宽 16:9 | 竖 16:9 | 左宽右窄 |
+| `rRightWide` | 竖 16:9 | 宽 16:9 | 左窄右宽 |
+
+左横右竖：
 
 :::image-grid r73
 ![$placeholder=linear-gradient(135deg,rgba(196,168,130,1),rgba(120,140,150,1),rgba(70,90,100,1))=placeholder](/img/jasper-gribble-EOMFC1NyHgM-unsplash.jpg)
 ![$placeholder=linear-gradient(160deg,rgba(90,110,80,1),rgba(150,160,120,1),rgba(210,200,170,1))=placeholder](/img/squids-z-ShAHqWGOrRU-unsplash.jpg)
 :::
+
+左竖右横把类名换成 `r37`。`r64` / `r46` 是 4:3 的左右对调，`rLeftWide` / `rRightWide` 是 16:9。第三张及以后不参与这两种宽度。
+
+## 横向滚动
+
+`scroll` 和 `slider` 样式相同：横向滚动，每张 `min(86%, 760px)`，带 scroll-snap。窄屏每张 86% 宽。张数不限。
+
+```
+:::image-grid scroll
+![](/img/a.jpg)
+![](/img/b.jpg)
+![](/img/c.jpg)
+:::
+```
+
+## 切换
+
+`switcher` 把多图叠在同一位置，底部按钮切换。`|` 前面是按钮文字；没有 `|` 时用图片 alt，再没有就用序号。
+
+```
+:::image-grid switcher
+白天|![白天](/img/day.jpg)
+夜晚|![夜晚](/img/night.jpg)
+:::
+```
 
 ## Live Photo
 
@@ -110,3 +187,12 @@ HTML 等价写法：
 封面用 front-matter `coverPlaceholder`，或同样写进 `assets-db`（按 `cover` 的 url 匹配）。
 
 同一 url 两边都写时，`assets-db` 覆盖文章里的值。本站本地图已写在 `assets-db/imgs/local.json`，文章里不用再贴。改完执行 `hexo clean`。
+
+![图 0](https://img.jiaozhe.me/2026/09/pic_1789267648677.webp)  
+
+![image](https://img.jiaozhe.me/2026/09/1789483640919.webp)  
+
+
+![image](https://img.jiaozhe.me/2026/09/1789485391022.webp)  
+
+![image](https://img.jiaozhe.me/2026/09/1789485547760.webp)  
