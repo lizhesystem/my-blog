@@ -334,6 +334,8 @@ J实在是太喜欢了，果然第二天我们另外一个景区又买了一个�
 ![](https://img.jiaozhe.me/2026/09/086-IMG_20260829_143006.webp)
 :::
 
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/video_20260829_142824_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/video_20260829_142824.mp4 %}
+
 :::image-grid portrait
 ![](https://img.jiaozhe.me/2026/09/087-IMG_20260829_140127.webp)
 ![](https://img.jiaozhe.me/2026/09/088-IMG_20260829_140243.webp)
@@ -380,6 +382,8 @@ J实在是太喜欢了，果然第二天我们另外一个景区又买了一个�
 ![](https://img.jiaozhe.me/2026/09/102-IMG_20260829_160814.webp)
 ![](https://img.jiaozhe.me/2026/09/103-IMG_20260829_162913.webp)
 :::
+
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7822_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7822.MOV %}
 
 :::image-grid landscape
 ![](https://img.jiaozhe.me/2026/09/104-IMG_20260829_164350.webp)
@@ -463,15 +467,16 @@ J实在是太喜欢了，果然第二天我们另外一个景区又买了一个�
 ![](https://img.jiaozhe.me/2026/09/132-DSC04609.webp)
 :::
 等我们快逛完还遇到个小插曲，快准备走的时候发现一群人穿着像是政府的工作人员簇拥着1、2个领导进入寺院，我们想应该有领导来参观，现在想想当时交通管制就是这个原因吧。
-:::image-grid landscape
-![](https://img.jiaozhe.me/2026/09/133-IMG_7875.webp)
-:::
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7874_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7874.MOV %}
 
 准备离开的时候刚好发现寺院大门对应夕阳下的石塔很有特点，赶快去拿自拍杆去拍。
 :::image-grid r73
 ![](https://img.jiaozhe.me/2026/09/135-IMG_20260829_184114.webp)
 ![](https://img.jiaozhe.me/2026/09/134-DSC04734.webp)
 :::
+
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7889_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7889.MOV %}
+
 :::image-grid portrait
 ![](https://img.jiaozhe.me/2026/09/136-IMG_7894.webp)
 ![](https://img.jiaozhe.me/2026/09/137-DSC04735.webp)
@@ -531,13 +536,15 @@ J实在是太喜欢了，果然第二天我们另外一个景区又买了一个�
 ![](https://img.jiaozhe.me/2026/09/154-IMG_7946.webp)
 :::
 
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7944_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7944.MOV %}
+
 后院的大雄宝殿，这是保存最完整的辽金木构大殿之一，里面空间非常空旷，感受到格外空旷，使用了减柱法的建造理念。
 :::image-grid r73
 ![正殿：大雄宝殿](https://img.jiaozhe.me/2026/09/155-IMG_7953_snapshot.webp)
 ![里面的佛像很大](https://img.jiaozhe.me/2026/09/156-DSC04742.webp)
 :::
 :::image-grid portrait
-![站在底下有种起码的感觉](https://img.jiaozhe.me/2026/09/157-DSC04752.webp)
+![这表情](https://img.jiaozhe.me/2026/09/157-DSC04752.webp)
 ![](https://img.jiaozhe.me/2026/09/158-DSC04757.webp)
 :::
 :::image-grid portrait
@@ -590,6 +597,9 @@ J实在是太喜欢了，果然第二天我们另外一个景区又买了一个�
 ![](https://img.jiaozhe.me/2026/09/179-DSC04917.webp)
 ![](https://img.jiaozhe.me/2026/09/177-IMG_8249.webp)
 :::
+
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7972_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7972.MOV %}
+
 普光明殿是前殿，穿过一个过厅，后面就是大雄宝殿。
 :::image-grid portrait
 ![](https://img.jiaozhe.me/2026/09/181-DSC04931.webp)
@@ -610,6 +620,8 @@ J实在是太喜欢了，果然第二天我们另外一个景区又买了一个�
 ![两边的雕像都是迈克站姿](https://img.jiaozhe.me/2026/09/189-IMG_20260830_091946.webp)
 ![](https://img.jiaozhe.me/2026/09/190-IMG_20260830_092012.webp)
 ‍:::
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7983_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7983.MOV %}
+
 :::image-grid portrait
 ![](https://img.jiaozhe.me/2026/09/191-DSC04961.webp)
 ![](https://img.jiaozhe.me/2026/09/192-DSC04969.webp)
@@ -623,13 +635,14 @@ J实在是太喜欢了，果然第二天我们另外一个景区又买了一个�
 ![](https://img.jiaozhe.me/2026/09/195-DSC04970.webp)
 ![](https://img.jiaozhe.me/2026/09/196-IMG_20260830_094918.webp)
 ‍:::
-:::image-grid portrait
-![刚好抓拍的的鸟](https://img.jiaozhe.me/2026/09/197-DSC04976.webp)
-![](https://img.jiaozhe.me/2026/09/198-IMG_20260830_095943.webp)
-:::
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7986_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_7986.MOV %}
+
 ‍:::image-grid landscape
 ![走时拍的正门](https://img.jiaozhe.me/2026/09/199-IMG_8246.webp)
 ‍:::
+
+{% live_photo photoSrc:https://img.jiaozhe.me/2026/09/video/IMG_8022_cover.webp videoSrc:https://img.jiaozhe.me/2026/09/video/IMG_8022.MOV %}
+
 ‍
 ## 总花费
 | 项目 | 两人合计（元） |
