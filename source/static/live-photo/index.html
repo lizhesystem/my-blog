@@ -59,6 +59,12 @@
       .live-photo.is-running .trigger-icon {
         animation-play-state: running;
       }
+      .live-photo.is-loading .trigger-icon {
+        animation-play-state: running;
+      }
+      .live-photo.is-loading .trigger-text {
+        opacity: 0.3;
+      }
       .live-trigger .trigger-text {
         letter-spacing: 2px;
         font-weight: 700;
@@ -126,9 +132,9 @@
         const video = root.querySelector(".live-video");
         let playing = false;
         let running = false;
+        let videoLoaded = false;
 
         img.src = photoSrc;
-        video.src = videoSrc;
         video.loop = loop;
         video.muted = muted;
 
@@ -154,6 +160,43 @@
           wrap.classList.remove("is-playing", "is-running");
         });
 
+        const setVolume = function () {
+          video.volume = Math.min(Math.max(volume, 0), 100) / 100;
+        };
+        const onCanPlay = function () {
+          video.removeEventListener("canplay", onCanPlay);
+          video.removeEventListener("error", onError);
+          wrap.classList.remove("is-loading");
+          if (playing && !running) {
+            wrap.classList.add("is-playing");
+            if (!muted) setVolume();
+            video.play();
+          }
+        };
+        const onError = function () {
+          video.removeEventListener("canplay", onCanPlay);
+          video.removeEventListener("error", onError);
+          wrap.classList.remove("is-loading");
+          videoLoaded = false;
+          if (playing) playing = false;
+        };
+
+        const ensureVideo = function () {
+          if (videoLoaded) return;
+          videoLoaded = true;
+          video.preload = "auto";
+          video.src = videoSrc;
+          video.load();
+          video.addEventListener("canplay", onCanPlay);
+          video.addEventListener("error", onError);
+        };
+
+        const canHover = window.matchMedia("(hover: hover)").matches;
+        wrap.addEventListener("pointerenter", function () {
+          if (!canHover || running || playing) return;
+          ensureVideo();
+        });
+
         trigger.addEventListener("click", function (event) {
           event.preventDefault();
           event.stopPropagation();
@@ -162,9 +205,14 @@
             return;
           }
           playing = true;
-          wrap.classList.add("is-playing");
-          if (!muted) video.volume = Math.min(Math.max(volume, 0), 100) / 100;
-          video.play();
+          ensureVideo();
+          if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+            wrap.classList.add("is-playing");
+            if (!muted) setVolume();
+            video.play();
+          } else {
+            wrap.classList.add("is-loading");
+          }
         });
 
         wrap.addEventListener("click", function (event) {
