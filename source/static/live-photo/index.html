@@ -121,7 +121,7 @@
 
         root.innerHTML =
           '<div class="live-photo">' +
-          '<button class="live-trigger" type="button"><span class="trigger-icon"></span><span class="trigger-text">LIVE</span></button>' +
+          '<button class="live-trigger" type="button" aria-label="Play Live Photo"><span class="trigger-icon"></span><span class="trigger-text">LIVE</span></button>' +
           '<img class="live-img" alt="" />' +
           "<video class=\"live-video\" playsinline webkit-playsinline></video>" +
           "</div>";
@@ -133,8 +133,8 @@
         let playing = false;
         let running = false;
         let videoLoaded = false;
+        let playRequest = 0;
 
-        img.src = photoSrc;
         video.loop = loop;
         video.muted = muted;
 
@@ -144,52 +144,73 @@
         img.addEventListener("load", function () {
           wrap.classList.add("is-image-ready");
           ready();
+          // The parent iframe is lazy-loaded; give its cover priority before video.
+          ensureVideo();
         });
+        img.addEventListener("error", ensureVideo);
         video.addEventListener("canplay", ready);
         video.addEventListener("loadedmetadata", ready);
         video.addEventListener("playing", function () {
           running = true;
-          wrap.classList.add("is-running");
+          wrap.classList.remove("is-loading");
+          wrap.classList.add("is-playing", "is-running");
+        });
+        video.addEventListener("waiting", function () {
+          if (!playing) return;
+          running = false;
+          wrap.classList.remove("is-running");
+          wrap.classList.add("is-loading");
         });
         video.addEventListener("pause", function () {
           running = false;
-          wrap.classList.remove("is-running");
+          wrap.classList.remove("is-running", "is-loading");
         });
         video.addEventListener("ended", function () {
-          playing = false;
-          wrap.classList.remove("is-playing", "is-running");
+          resetPlayback();
         });
 
-        const setVolume = function () {
-          video.volume = Math.min(Math.max(volume, 0), 100) / 100;
-        };
-        const onCanPlay = function () {
-          video.removeEventListener("canplay", onCanPlay);
-          video.removeEventListener("error", onError);
-          wrap.classList.remove("is-loading");
-          if (playing && !running) {
-            wrap.classList.add("is-playing");
-            if (!muted) setVolume();
-            video.play();
+        function resetPlayback(failed) {
+          playRequest += 1;
+          playing = false;
+          running = false;
+          video.pause();
+          wrap.classList.remove("is-loading", "is-playing", "is-running");
+          if (failed) {
+            trigger.title = "Playback failed. Click LIVE to retry.";
+            trigger.setAttribute("aria-label", trigger.title);
           }
-        };
-        const onError = function () {
-          video.removeEventListener("canplay", onCanPlay);
-          video.removeEventListener("error", onError);
-          wrap.classList.remove("is-loading");
-          videoLoaded = false;
-          if (playing) playing = false;
-        };
+        }
 
-        const ensureVideo = function () {
+        video.addEventListener("error", function () {
+          videoLoaded = false;
+          resetPlayback(true);
+        });
+
+        function ensureVideo() {
           if (videoLoaded) return;
           videoLoaded = true;
           video.preload = "auto";
           video.src = videoSrc;
           video.load();
-          video.addEventListener("canplay", onCanPlay);
-          video.addEventListener("error", onError);
-        };
+        }
+
+        function playVideo() {
+          const request = ++playRequest;
+          playing = true;
+          trigger.title = "";
+          trigger.setAttribute("aria-label", "Play Live Photo");
+          wrap.classList.add("is-loading");
+          try {
+            ensureVideo();
+            if (!muted) video.volume = Math.min(Math.max(volume, 0), 100) / 100;
+            // Call during the click, not canplay, to preserve user activation.
+            video.play().catch(function () {
+              if (request === playRequest) resetPlayback(true);
+            });
+          } catch (error) {
+            if (request === playRequest) resetPlayback(true);
+          }
+        }
 
         const canHover = window.matchMedia("(hover: hover)").matches;
         wrap.addEventListener("pointerenter", function () {
@@ -201,24 +222,19 @@
           event.preventDefault();
           event.stopPropagation();
           if (running) {
+            playRequest += 1;
             video.pause();
             return;
           }
-          playing = true;
-          ensureVideo();
-          if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-            wrap.classList.add("is-playing");
-            if (!muted) setVolume();
-            video.play();
-          } else {
-            wrap.classList.add("is-loading");
-          }
+          playVideo();
         });
 
         wrap.addEventListener("click", function (event) {
           if (event.target.closest(".live-trigger") || playing) return;
           window.top.postMessage(photoSrc, window.location.origin);
         });
+
+        img.src = photoSrc;
       })();
     </script>
   </body>
