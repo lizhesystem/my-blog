@@ -23,6 +23,6 @@
     "hexo-renderer-marked": "^7.0.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-linen": "^1.0.24",
-    "moment": "^2.30.1"
+    "moment": "^2.31.0"
   }
 }
