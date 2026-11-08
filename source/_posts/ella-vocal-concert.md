@@ -23,7 +23,7 @@ translations: ['en']
 看天气预报晚上应该会有雨，早点开发出发，晚饭买了2个汉堡，等到停车场在车里解决。
 {% live_photo photoSrc:https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/3d961ee4b6e7bdcd37d658627aa7e5a29cc6ae645671c23194f2affd5be555a9-poster.webp videoSrc:https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/3d961ee4b6e7bdcd37d658627aa7e5a29cc6ae645671c23194f2affd5be555a9.mp4 %}
 
-我俩一人一个汉堡王的汉堡，我的大皇堡，J的小黄堡，味道不错，吃饱喝足出发。
+我俩一人一个汉堡王的汉堡，我的大皇堡，J的小皇堡，味道不错，吃饱喝足出发。
 :::image-grid portrait
 ![alt text](https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/b1636e43a737a28531e6151e3fd6d8de57ff56cc2f6ef71cedbb68fece628df0.webp)
 ![alt text](https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/69163e5c8958674dfdadbbbefb2c2ee379b24409d819bb866342089623498684.webp)
