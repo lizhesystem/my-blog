@@ -47,7 +47,7 @@ translations: ['en']
 ![alt text](https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/4b21ffc135b231c5cca6774d95cb4877929861d7346ede320f4988f533c55e12.webp)
 :::
 
-# 开始
+# 演示会开始
 {% live_photo photoSrc:https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/d07140fe10045ba53a44cc88fd71d8194ee26c3a037d1f4d5f060ef33b7d10e6-poster.webp videoSrc:https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/d07140fe10045ba53a44cc88fd71d8194ee26c3a037d1f4d5f060ef33b7d10e6.mp4 %}
 
 {% live_photo photoSrc:https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/1cf4507e878c4cd9cfeb4e030101b13c7250891578ce67b801c3e3873d3fcf5d-poster.webp videoSrc:https://img.jiaozhe.me/posts/2026/11/ella-vocal-concert/1cf4507e878c4cd9cfeb4e030101b13c7250891578ce67b801c3e3873d3fcf5d.mp4 %}
